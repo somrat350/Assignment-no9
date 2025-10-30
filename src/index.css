@@ -1,0 +1,59 @@
+<<<<<<< HEAD
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: dark --default;
+}
+=======
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import "tailwindcss";
+@plugin "daisyui"{
+  themes: dark --default
+}
+
+*{
+  font-family: "Poppins", sans-serif;
+}
+
+.navLink{
+  position: relative;
+}
+
+
+.navLink::before {
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: #642ee3;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  transition: width 0.4s ease;
+}
+
+.navLink:hover::before {
+  width: 100%;
+}
+
+.navLink.active::before{
+  width: 100%;
+}
+
+/* Loading animation */
+.loader {
+  width: 40px;
+  height: 40px;
+  border: 1px solid;
+  border-color: #fff transparent;
+  border-radius: 50%;
+
+  animation: loader 1s linear infinite;
+}
+
+@keyframes loader {
+  to {
+    transform: rotate(360deg);
+    border: 20px solid;
+  }
+}
+>>>>>>> 2a673b2 (completed full project)

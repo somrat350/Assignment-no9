@@ -2,17 +2,19 @@ import { useParams } from "react-router";
 import useData from "../Hooks/UseData";
 import { FaStar } from "react-icons/fa";
 import Loading from "../components/Loading";
-import imgLoading from "../assets/imageLoading.webp"
 import toast from "react-hot-toast";
+import ServiceNotFound from "../components/ServiceNotFound";
 
 const Details = () => {
   const { data, loading } = useData();
   const { serviceId } = useParams();
   const id = Number(serviceId);
 
-  if (loading) return <Loading/>;
+  if (loading) return <Loading />;
 
   const matched = data.find((d) => d.serviceId === id);
+
+  if (!matched) return <ServiceNotFound />;
 
   const {
     serviceName,
@@ -33,10 +35,17 @@ const Details = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto p-5 mt-10">
+    <div data-aos="fade-up" className="max-w-7xl mx-auto p-5 mt-10">
+
+      <title>{`${serviceName}`}</title>
+
       <div className="flex flex-col sm:flex-row gap-5">
         <div className="">
-          <img className="rounded-xl w-full max-w-[400px] h-full" src={image||imgLoading} alt={serviceName} />
+          <img
+            className="rounded-xl w-full max-w-[400px] h-full"
+            src={image}
+            alt={serviceName}
+          />
         </div>
         <div className="p-2 flex flex-col gap-3">
           <h2 className="text-2xl lg:text-4xl font-bold">{serviceName}</h2>
@@ -58,8 +67,8 @@ const Details = () => {
               </span>
             </span>
             <span>
-              Available Slots:{" "}
-              <span className="text-amber-600">{slotsAvailable}</span>
+              Available Slots:
+              <span className="text-amber-600"> {slotsAvailable}</span>
             </span>
           </div>
         </div>
@@ -86,13 +95,13 @@ const Details = () => {
           <input
             type="text"
             placeholder="Enter your name"
-            className="input w-full"
+            className="input w-full border border-gray-500 placeholder:text-gray-500"
             required
           />
           <input
             type="email"
             placeholder="Enter your email"
-            className="input w-full"
+            className="input w-full border border-gray-500 placeholder:text-gray-500"
             required
           />
           <button className="btn btn-primary col-span-full">Book Now</button>

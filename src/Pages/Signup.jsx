@@ -7,7 +7,8 @@ import Loading from "../components/Loading";
 import toast from "react-hot-toast";
 
 const Signup = () => {
-  const { user, userLoading,setUserLoading, createUEP, createUG, updateUser } = useContext(AuthContext);
+  const { user, userLoading, setUserLoading, createUEP, createUG, updateUser } =
+    useContext(AuthContext);
   const [passValidateText, setPassValidateText] = useState("");
   const [password, setPassword] = useState("");
   const [passwordType, setPasswordType] = useState(true);
@@ -64,40 +65,43 @@ const Signup = () => {
         return updateUser(updatedObj);
       })
       .then(() => {
-        toast.success("Sign Up successful.");
         navigate(from, { replace: true });
+        toast.success("Sign Up successful.");
       })
       .catch((error) => {
         if (error.code === "auth/email-already-in-use") {
+          navigate("/signin");
           toast.error(
             "This email is already registered. Please log in instead."
           );
-          navigate("/signin");
         } else {
           toast.error(error.message);
         }
       })
-      .finally(()=>{
-        setUserLoading(false)
-      })
+      .finally(() => {
+        setUserLoading(false);
+      });
   };
 
   const handleCreateGoogle = () => {
     createUG()
       .then(() => {
-        toast.success("Sign Up successful.");
         navigate(from, { replace: true });
+        toast.success("Sign Up successful.");
       })
       .catch((error) => {
         toast.error(error.message);
       })
-      .finally(()=>{
-        setUserLoading(false)
-      })
+      .finally(() => {
+        setUserLoading(false);
+      });
   };
 
   return (
-    <div className="flex items-center p-5 mt-5">
+    <div data-aos="fade-down" className="flex items-center p-5 mt-5">
+
+      <title>Sign Up | Pet Care</title>
+
       <div className="w-full max-w-5xl mx-auto">
         <div className="bg-white rounded-3xl flex flex-col sm:flex-row gap-2 overflow-hidden">
           <div className="sm:w-1/2 rounded-b-[60px] sm:rounded-s-none sm:rounded-e-[100px] flex flex-col gap-3 p-5 items-center justify-center bg-[#632EE3] text-white text-center">
@@ -114,7 +118,7 @@ const Signup = () => {
           </div>
 
           <div className="sm:w-1/2 flex flex-col gap-4 p-5 justify-center">
-            <h2 className="text-4xl font-bold text-center">Sign Up</h2>
+            <h2 className="text-4xl font-bold text-center text-black">Sign Up</h2>
             <form onSubmit={handleSubmit} className="flex flex-col gap-3">
               {/* name */}
               <div className="relative">
@@ -122,7 +126,7 @@ const Signup = () => {
                   type="text"
                   name="name"
                   placeholder="Username"
-                  className="w-full h-10 ps-2 pe-8 border-none outline-none text-gray-600 font-medium"
+                  className="w-full h-10 ps-2 pe-8 border border-gray-400 rounded-sm outline-none text-gray-600 font-medium"
                   required
                 />
                 <FaUser className="absolute top-1/4 right-2 text-gray-600" />
@@ -133,7 +137,7 @@ const Signup = () => {
                   type="email"
                   name="email"
                   placeholder="Email"
-                  className="w-full h-10 ps-2 pe-8 border-none outline-none text-gray-600 font-medium"
+                  className="w-full h-10 ps-2 pe-8 border border-gray-400 rounded-sm outline-none text-gray-600 font-medium"
                   required
                 />
                 <MdEmail className="absolute top-1/4 right-2 text-gray-600" />
@@ -144,7 +148,7 @@ const Signup = () => {
                   type="text"
                   name="profilePic"
                   placeholder="Image url"
-                  className="w-full h-10 ps-2 pe-8 border-none outline-none text-gray-600 font-medium"
+                  className="w-full h-10 ps-2 pe-8 border border-gray-400 rounded-sm outline-none text-gray-600 font-medium"
                   required
                 />
                 <MdImage className="absolute top-1/4 right-2 text-gray-600" />
@@ -155,7 +159,7 @@ const Signup = () => {
                   type={passwordType ? "password" : "text"}
                   name="password"
                   placeholder="Password"
-                  className="w-full h-10 ps-2 pe-8 border-none outline-none text-gray-600 font-medium"
+                  className="w-full h-10 ps-2 pe-8 border border-gray-400 rounded-sm outline-none text-gray-600 font-medium"
                   required
                 />
                 {passwordType ? (

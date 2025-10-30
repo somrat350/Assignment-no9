@@ -11,7 +11,7 @@ import {
   signOut,
   updateProfile,
 } from "firebase/auth";
-import { auth } from "../../Firebase/firebase.config";
+import { auth } from "../../Firebase/Firebase.config";
 import toast from "react-hot-toast";
 
 const googleAuthProvider = new GoogleAuthProvider();
@@ -25,14 +25,19 @@ const AuthProvider = ({ children }) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
+  const createUG = () => {
+    setUserLoading(true);
+    return signInWithPopup(auth, googleAuthProvider);
+  };
+
   const signInUEP = (email, password) => {
     setUserLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
-  const createUG = () => {
+  const signout = () => {
     setUserLoading(true);
-    return signInWithPopup(auth, googleAuthProvider);
+    return signOut(auth);
   };
 
   const updateUser = async (updatedObj) => {
@@ -50,21 +55,11 @@ const AuthProvider = ({ children }) => {
       });
   };
 
-  const reloadUser = async () => {
-    setUserLoading(true);
-    await reload(auth.currentUser);
-    setUser(auth.currentUser);
-  };
-
-  const signout = () => {
-    setUserLoading(true);
-    return signOut(auth);
-  };
-
   const passwordReset = async (email, actionCodeSettings) => {
-    return sendPasswordResetEmail(auth, email, actionCodeSettings)
-    .then(() => {
-      toast.warning("Password reset email will be send. Please check your gmail inbox or spam tab.")
+    return sendPasswordResetEmail(auth, email, actionCodeSettings).then(() => {
+      toast(
+        "Password reset email will be send. Please check your gmail inbox or spam tab."
+      );
       window.location.href = "https://mail.google.com/";
     });
   };
@@ -85,12 +80,11 @@ const AuthProvider = ({ children }) => {
     userLoading,
     setUserLoading,
     createUEP,
-    signInUEP,
-    passwordReset,
     createUG,
-    updateUser,
-    reloadUser,
+    signInUEP,
     signout,
+    updateUser,
+    passwordReset,
   };
 
   return <AuthContext value={authInfo}>{children}</AuthContext>;

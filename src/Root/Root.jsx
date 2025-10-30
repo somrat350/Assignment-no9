@@ -1,12 +1,11 @@
 import { Outlet, useLocation } from "react-router";
-import Header from "../components/Header";
 import Footer from "../components/Footer";
+import Header from "../components/Header";
 import { useEffect, useState } from "react";
 import Loading from "../components/Loading";
-import { Toaster } from "react-hot-toast";
-import "aos/dist/aos.css";
-import "animate.css";
 import Aos from "aos";
+import "aos/dist/aos.css";
+import { Toaster } from "react-hot-toast";
 
 const Root = () => {
   const location = useLocation();
@@ -42,4 +41,5 @@ const Root = () => {
     </div>
   );
 };
+
 export default Root;

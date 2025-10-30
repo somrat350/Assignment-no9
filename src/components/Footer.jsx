@@ -4,7 +4,7 @@ import { FaFacebook, FaGithub, FaInstagram, FaLinkedin, FaTwitter } from "react-
 const Footer = () => {
   
   return (
-    <footer className="mt-10 bg-[#1d232a] border-t border-gray-700">
+    <footer data-aos="fade-up" className="mt-10 bg-[#1d232a] border-t border-gray-700">
       <div className="max-w-7xl mx-auto px-5 py-5">
         <div className="flex flex-col sm:flex-row gap-5 justify-between items-center">
           <div className="flex items-center gap-3">
@@ -23,8 +23,7 @@ const Footer = () => {
           <Link to="/">Home</Link>
           <Link to="/services">Services</Link>
           <Link to="/profile">Profile</Link>
-          <Link to="/">About</Link>
-          <Link to="/">Contact</Link>
+          <Link to="/about">About</Link>
         </div>
         <h2 className="text-center text-white font-medium text-lg border-t border-gray-400 mt-5 pt-5">
           Copyright © 2025 - All right reserved

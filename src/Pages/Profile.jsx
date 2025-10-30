@@ -12,11 +12,15 @@ const Profile = () => {
   const { displayName, email, photoURL } = user;
 
   return (
-    <div className="max-w-7xl mx-auto px-5 mt-10">
+    <div data-aos="fade-down" className="max-w-7xl mx-auto px-5 mt-10">
+
+      <title>Profile | Pet Care</title>
+
       <div className="flex flex-col md:flex-row gap-5">
         <div className="flex flex-col items-center bg-[#5754e8]/20 p-5 rounded-2xl w-full md:max-w-[320px]">
           <div className="">
             <img
+              data-aos="zoom-in"
               className="w-40 h-40 rounded-full animate__animated animate__zoomIn"
               src={photoURL || "/user.png"}
               alt=""

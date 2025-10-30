@@ -1,11 +1,11 @@
 import { Link } from "react-router";
 import useData from "../Hooks/UseData";
 import ServiceCard from "./ServiceCard";
-
+import Loading from "./Loading";
 
 const PopularServices = () => {
   const { data, loading } = useData();
-  if (loading) return
+  if (loading) return <Loading />;
   const firstEight = data.slice(0, 8);
 
   return (
@@ -19,10 +19,14 @@ const PopularServices = () => {
         </p>
       </div>
       <div className="mt-5 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-        {firstEight.map((service) => <ServiceCard key={service.serviceId} service={service}/>)}
+        {firstEight.map((service) => (
+          <ServiceCard key={service.serviceId} service={service} />
+        ))}
       </div>
       <div className="flex justify-center mt-16">
-        <Link className="btn btn-primary" to="/services">Show All</Link>
+        <Link className="btn btn-primary" to="/services">
+          Show All
+        </Link>
       </div>
     </div>
   );

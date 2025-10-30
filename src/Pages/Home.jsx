@@ -1,15 +1,19 @@
-import BannerSlider from '../components/BannerSlider';
-import PopularServices from '../components/PopularServices';
-import WinterTips from '../components/WinterTips';
-import ExpertVets from '../components/ExpertVets';
+import BannerSlider from "../components/BannerSlider";
+import ExpertVets from "../components/ExpertVets";
+import HappyPetStories from "../components/HappyPetStories";
+import PopularServices from "../components/PopularServices";
+import WinterTips from "../components/WinterTips";
 
 const Home = () => {
   return (
-    <div className='max-w-7xl mx-auto p-5'>
-      <BannerSlider/>
-      <PopularServices/>
-      <WinterTips/>
-      <ExpertVets/>
+    <div className="max-w-7xl mx-auto p-5">
+      <title>Home | Pet Care</title>
+
+      <BannerSlider />
+      <PopularServices />
+      <WinterTips />
+      <ExpertVets />
+      <HappyPetStories />
     </div>
   );
 };

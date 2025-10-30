@@ -6,7 +6,8 @@ From grooming 🧼 to training 🦮 and veterinary care 🏥 — Pet Care ensure
 ---
 
 ## 🌐 Live Demo  
-👉 **Live Website:** [Pet Care](https://assignment-no9.web.app/)
+👉 **Live Website:** [Pet Care](https://assignment-no9-private.web.app/)  
+👉 **GitHub Repository:** [View on GitHub](https://github.com/programming-hero-web-course2/b12-a9-firesheild-somrat350)
 
 ---
 

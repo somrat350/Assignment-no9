@@ -1,5 +1,5 @@
-import React, { useContext, useState } from 'react';
-import { useLocation } from 'react-router';
+import { useContext, useState } from 'react';
+import { Link, useLocation } from 'react-router';
 import Loading from '../components/Loading';
 import { AuthContext } from '../Context/AuthContext/AuthContext';
 import toast from 'react-hot-toast';
@@ -20,8 +20,8 @@ const PasswordReset = () => {
     setLoading(true);
 
     const actionCodeSettings = {
-      url: "http://localhost:5173/signin",
-      handleCodeInApp: false,
+      url: "https://assignment-no9-private.web.app/signin",
+      handleCodeInApp: true,
     };
 
     passwordReset(email,actionCodeSettings)
@@ -29,19 +29,23 @@ const PasswordReset = () => {
       toast.success("success")
     })
     .catch((error)=>{
-      toast.error(error)
+      toast.error(error.message)
     })
     
   }
   return (
-    <div className='mt-10 max-w-7xl mx-auto p-5 min-h-[380px] flex justify-center items-center'>
+    <div  data-aos="fade-down" className='mt-10 max-w-7xl mx-auto p-5 min-h-[380px] flex flex-col gap-5 justify-center items-center'>
+
+      <title>Reset password | Pet Care</title>
+
       <form onSubmit={handleSubmit} className='flex flex-col gap-4 w-full max-w-[380px] mx-auto border p-5 rounded-2xl'>
         <div className="flex flex-col gap-2">
           <label htmlFor="email">Email</label>
           <input type="email" placeholder='Enter your email' onChange={(e)=>setEmail(e.target.value)} value={email} required className="input w-full" />
         </div>
-        <button className='btn btn-primary w-full'>Reset</button>
+        <button className='btn btn-primary w-full'>Send Email</button>
       </form>
+      <Link to="/signin" className='border-b border-blue-500 text-blue-500'>Cancel</Link>
     </div>
   );
 };

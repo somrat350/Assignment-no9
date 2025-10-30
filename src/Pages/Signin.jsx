@@ -55,8 +55,8 @@ const Signin = () => {
 
     signInUEP(email, password)
       .then(() => {
-        toast.success("Sign In successful.");
         navigate(from, { replace: true });
+        toast.success("Sign In successful.");
       })
       .catch((error) => {
         if (
@@ -77,8 +77,8 @@ const Signin = () => {
   const handleCreateGoogle = () => {
     createUG()
       .then(() => {
-        toast.success("Sign In successful.");
         navigate(from, { replace: true });
+        toast.success("Sign In successful.");
       })
       .catch((error) => {
         toast.error(error.message);
@@ -89,7 +89,10 @@ const Signin = () => {
   };
 
   return (
-    <div className="flex items-center p-5 mt-5">
+    <div data-aos="fade-down" className="flex items-center p-5 mt-5">
+
+      <title>Sign In | Pet Care</title>
+
       <div className="w-full max-w-5xl mx-auto">
         <div className="bg-white rounded-3xl flex flex-col sm:flex-row gap-2 overflow-hidden">
           <div className="sm:w-1/2 rounded-b-[60px] sm:rounded-s-none sm:rounded-e-[100px] flex flex-col gap-3 p-5 items-center justify-center bg-[#632EE3] text-white text-center">
@@ -106,7 +109,7 @@ const Signin = () => {
           </div>
 
           <div className="sm:w-1/2 flex flex-col gap-4 p-5 justify-center">
-            <h2 className="text-4xl font-bold text-center">Sign In</h2>
+            <h2 className="text-4xl font-bold text-center text-black">Sign In</h2>
             <form onSubmit={handleSubmit} className="flex flex-col gap-3">
               <div className="relative">
                 <input
@@ -114,7 +117,7 @@ const Signin = () => {
                   name="email"
                   placeholder="Email"
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full h-10 ps-2 pe-8 border-none outline-none text-gray-600 font-medium"
+                  className="w-full h-10 ps-2 pe-8 border border-gray-400 rounded-sm outline-none text-gray-600 font-medium"
                   required
                 />
                 <MdEmail className="absolute top-1/4 right-2 text-gray-600" />
@@ -125,7 +128,7 @@ const Signin = () => {
                   type={passwordType ? "password" : "text"}
                   name="password"
                   placeholder="Password"
-                  className="w-full h-10 ps-2 pe-8 border-none outline-none text-gray-600 font-medium"
+                  className="w-full h-10 ps-2 pe-8 border border-gray-400 rounded-sm outline-none text-gray-600 font-medium"
                   required
                 />
                 {passwordType ? (

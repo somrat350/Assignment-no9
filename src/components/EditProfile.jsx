@@ -24,7 +24,7 @@ const EditProfile = () => {
       })
   };
   return (
-    <div>
+    <div data-aos="fade-up">
       <form onSubmit={handleSubmit}>
         <div className="grid sm:grid-cols-2 gap-10">
           {/* Name */}

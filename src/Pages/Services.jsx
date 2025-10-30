@@ -13,21 +13,26 @@ const Services = () => {
       return;
     }
     setLoad(true);
-    const timer = setTimeout(() => setLoad(false), 500);
+    const timer = setTimeout(() => setLoad(false), 300);
     return () => clearTimeout(timer);
   }, [src]);
 
-  if (loading) return;
+  if (loading) return <Loading />;
 
   const normalize = (text) => text.trim().replace(/\s+/g, " ").toLowerCase();
 
   const finalAllData = data.filter((d) => {
     const term = normalize(src);
-    return normalize(d.serviceName).includes(term) || normalize(d.serviceName).includes(term);
+    return (
+      normalize(d.serviceName).includes(term) ||
+      normalize(d.serviceName).includes(term)
+    );
   });
 
   return (
-    <div className='max-w-7xl mx-auto p-5 mt-10'>
+    <div data-aos="fade-up" className="max-w-7xl mx-auto p-5 mt-10">
+      <title>Services | Pet Care</title>
+
       <div className="text-center">
         <h2 className="text-4xl font-bold">Our all services</h2>
         <p className="text-[#627382] text-xl mt-3">
@@ -65,15 +70,20 @@ const Services = () => {
         </label>
       </div>
       {load ? (
-        <Loading/>
+        <Loading />
       ) : finalAllData.length === 0 ? (
-        <span>search not found</span>
+        <h2 data-aos="fade-up" className="mt-10 text-center font-bold text-2xl">
+          Search not matched!
+        </h2>
       ) : (
-        <div data-aos="fade-up" className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-10">
-      {
-        finalAllData.map(service=><ServiceCard key={service.serviceId} service={service} />)
-      }
-    </div>
+        <div
+          data-aos="fade-up"
+          className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-10"
+        >
+          {finalAllData.map((service) => (
+            <ServiceCard key={service.serviceId} service={service} />
+          ))}
+        </div>
       )}
     </div>
   );

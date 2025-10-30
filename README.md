@@ -1,16 +1,54 @@
-# React + Vite
+# 🐾 Pet Care — Professional Pet Care Services Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to **Pet Care**, a modern and responsive web application offering reliable pet care services.  
+From grooming 🧼 to training 🦮 and veterinary care 🏥 — Pet Care ensures your furry friends receive the love and care they deserve. 🐶🐱
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌐 Live Demo  
+👉 **Live Website:** [Pet Care](https://assignment-no9.web.app/)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🪶 Badges
 
-## Expanding the ESLint configuration
+![React](https://img.shields.io/badge/React-19.0.0-blue?logo=react&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.4.0-38bdf8?logo=tailwindcss&logoColor=white)
+![DaisyUI](https://img.shields.io/badge/DaisyUI-4.12.0-FF69B4?logo=daisyui&logoColor=white)
+![Firebase](https://img.shields.io/badge/Firebase-Authentication-orange?logo=firebase)
+![Animate.css](https://img.shields.io/badge/Animate.css-4.1.1-ff69b4?logo=css3)
+![AOS](https://img.shields.io/badge/AOS-Animation-green)
+![React Hot Toast](https://img.shields.io/badge/React_Hot_Toast-Notifications-blueviolet)
+![React Router](https://img.shields.io/badge/React_Router-7.0.0-critical?logo=reactrouter)
+![License](https://img.shields.io/badge/License-MIT-success)
+![Status](https://img.shields.io/badge/Status-Active-brightgreen)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## ✨ Features
+
+- 🏡 **Home Page:** Animated hero section with smooth AOS effects.  
+- 🐕 **Services Section:** Dynamic list of all available pet care services.  
+- 👤 **User Authentication:** Secure signup, login, and password reset via **Firebase**.  
+- ⭐ **Service Details:** Detailed information with ratings, price, and provider info.  
+- 🧑‍⚕️ **User Profile:** Update name and profile image/URL.  
+- 🔒 **Protected Routes:** Access restricted to authenticated users.  
+- 🌙 **Dark/Light Mode Toggle:** Built with **DaisyUI theme support**.  
+- ⚡ **Toasts & Alerts:** Interactive notifications powered by **React Hot Toast**.  
+- 🖥️ **Fully Responsive:** Optimized for all devices.  
+- 🎨 **Modern UI:** Built using TailwindCSS, DaisyUI, Animate.css, and React Icons.  
+
+---
+
+## 🛠️ Technologies Used
+
+| Category | Tools |
+|-----------|--------|
+| **Frontend** | React, React Router |
+| **Styling** | TailwindCSS, DaisyUI, Animate.css |
+| **Animation** | AOS (Animate On Scroll) |
+| **Authentication & Hosting** | Firebase |
+| **Notifications** | React Hot Toast |
+| **Icons** | React Icons |
+
+---

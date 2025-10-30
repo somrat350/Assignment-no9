@@ -22,9 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-<<<<<<< HEAD
-=======
 
 # Environment files
 .env.local
->>>>>>> 2a673b2 (completed full project)
